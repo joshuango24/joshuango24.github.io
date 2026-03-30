@@ -8,105 +8,175 @@
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-left">
-            <a href="#" class="logo">JOSHUA NGO</a>
-        </div>
-        <div class="nav-right">
-            <a href="#about">About</a>
-            <a href="#work">Work</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <a href="#" class="name" data-nav="home">Joshua Ngo</a>
 
-    <!-- Hero -->
-    <section class="hero">
-        <h1>Designing experiences<br>that matter.</h1>
-        <p class="hero-sub">A space for ideas, projects, and exploration.</p>
-    </section>
+        <!-- Main nav links — visible by default -->
+        <nav class="nav-level" id="nav-main">
+            <a href="#" data-nav="projects">Projects</a>
+            <a href="#" data-nav="information">Information</a>
+            <a href="#" data-nav="contact">Contact</a>
+        </nav>
 
-    <!-- About -->
-    <section id="about" class="section">
-        <div class="section-grid">
-            <div class="section-label">About</div>
-            <div class="section-content">
+        <!-- Project list — shown when "Projects" is clicked -->
+        <nav class="nav-level hidden" id="nav-projects">
+            <a href="#" class="nav-back" data-nav="main">&larr; Back</a>
+            <a href="#" data-project="project-one">Project One</a>
+            <a href="#" data-project="project-two">Project Two</a>
+            <a href="#" data-project="project-three">Project Three</a>
+            <a href="#" data-project="project-four">Project Four</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+
+        <!-- Home -->
+        <section class="page active" id="page-home">
+            <div class="home-hero">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80" alt="Featured work">
+                <p class="home-caption">Selected work, 2024 &ndash; 2026</p>
+            </div>
+        </section>
+
+        <!-- Information -->
+        <section class="page" id="page-information">
+            <div class="info-content">
                 <p>
-                    I believe in purposeful design — work that is simple,
-                    honest, and rooted in real needs. Every project is an
-                    opportunity to observe, understand, and create something
-                    meaningful.
+                    Joshua Ngo is a designer and creative based in Seoul.
+                    His work focuses on purposeful design — simple, honest,
+                    and rooted in real needs.
                 </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pillars -->
-    <section class="pillars">
-        <div class="pillar">
-            <span class="pillar-number">01</span>
-            <h3>Research</h3>
-            <p>Understanding people, context, and constraints before designing solutions.</p>
-        </div>
-        <div class="pillar">
-            <span class="pillar-number">02</span>
-            <h3>Create</h3>
-            <p>Bringing ideas to life through thoughtful craft and iteration.</p>
-        </div>
-        <div class="pillar">
-            <span class="pillar-number">03</span>
-            <h3>Refine</h3>
-            <p>Stripping away the unnecessary until only the essential remains.</p>
-        </div>
-    </section>
-
-    <!-- Work -->
-    <section id="work" class="section">
-        <div class="section-grid">
-            <div class="section-label">Selected Work</div>
-            <div class="section-content">
-                <div class="work-list">
-                    <a href="#" class="work-item">
-                        <span class="work-title">Project One</span>
-                        <span class="work-year">2026</span>
-                    </a>
-                    <a href="#" class="work-item">
-                        <span class="work-title">Project Two</span>
-                        <span class="work-year">2025</span>
-                    </a>
-                    <a href="#" class="work-item">
-                        <span class="work-title">Project Three</span>
-                        <span class="work-year">2025</span>
-                    </a>
-                    <a href="#" class="work-item">
-                        <span class="work-title">Project Four</span>
-                        <span class="work-year">2024</span>
-                    </a>
+                <p>
+                    Every project is an opportunity to observe, understand,
+                    and create something meaningful. He believes in stripping
+                    away the unnecessary until only the essential remains.
+                </p>
+                <div class="info-details">
+                    <div class="info-row">
+                        <span class="info-label">Based in</span>
+                        <span>Seoul, South Korea</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Focus</span>
+                        <span>Design, Creative Direction</span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section section-dark">
-        <div class="section-grid">
-            <div class="section-label">Contact</div>
-            <div class="section-content">
-                <p>Interested in working together? Get in touch.</p>
-                <div class="contact-links">
-                    <a href="mailto:hello@example.com">Email</a>
+        <!-- Contact -->
+        <section class="page" id="page-contact">
+            <div class="info-content">
+                <p>For inquiries and collaborations:</p>
+                <div class="contact-list">
+                    <a href="mailto:hello@example.com">hello@example.com</a>
                     <a href="#">LinkedIn</a>
-                    <a href="#">GitHub</a>
+                    <a href="https://github.com/joshuango24">GitHub</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer>
-        <span>&copy; 2026 Joshua Ngo</span>
-        <span>All rights reserved</span>
-    </footer>
+        <!-- Project Pages -->
+        <section class="page" id="page-project-one">
+            <div class="project-header">
+                <h2>Project One</h2>
+                <span class="project-meta">Design &mdash; 2026</span>
+            </div>
+            <div class="gallery">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80" alt="Project One — Image 1">
+                <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200&q=80" alt="Project One — Image 2">
+                <img src="https://images.unsplash.com/photo-1497215842964-222b430dc094?w=1200&q=80" alt="Project One — Image 3">
+            </div>
+        </section>
+
+        <section class="page" id="page-project-two">
+            <div class="project-header">
+                <h2>Project Two</h2>
+                <span class="project-meta">Branding &mdash; 2025</span>
+            </div>
+            <div class="gallery">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80" alt="Project Two — Image 1">
+                <img src="https://images.unsplash.com/photo-1481253127861-534498168948?w=1200&q=80" alt="Project Two — Image 2">
+            </div>
+        </section>
+
+        <section class="page" id="page-project-three">
+            <div class="project-header">
+                <h2>Project Three</h2>
+                <span class="project-meta">Creative Direction &mdash; 2025</span>
+            </div>
+            <div class="gallery">
+                <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80" alt="Project Three — Image 1">
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&q=80" alt="Project Three — Image 2">
+            </div>
+        </section>
+
+        <section class="page" id="page-project-four">
+            <div class="project-header">
+                <h2>Project Four</h2>
+                <span class="project-meta">Photography &mdash; 2024</span>
+            </div>
+            <div class="gallery">
+                <img src="https://images.unsplash.com/photo-1493397212122-2b85dda8106b?w=1200&q=80" alt="Project Four — Image 1">
+                <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1200&q=80" alt="Project Four — Image 2">
+                <img src="https://images.unsplash.com/photo-1448630360428-65456885c650?w=1200&q=80" alt="Project Four — Image 3">
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        const sidebar = document.querySelector('.sidebar');
+        const navMain = document.getElementById('nav-main');
+        const navProjects = document.getElementById('nav-projects');
+        const pages = document.querySelectorAll('.page');
+
+        function showPage(id) {
+            pages.forEach(p => p.classList.remove('active'));
+            const target = document.getElementById('page-' + id);
+            if (target) target.classList.add('active');
+        }
+
+        function showNav(level) {
+            navMain.classList.toggle('hidden', level !== 'main');
+            navProjects.classList.toggle('hidden', level !== 'projects');
+        }
+
+        // Main nav links
+        document.querySelectorAll('[data-nav]').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const nav = link.dataset.nav;
+
+                if (nav === 'home') {
+                    showNav('main');
+                    showPage('home');
+                } else if (nav === 'projects') {
+                    showNav('projects');
+                    showPage('home');
+                } else if (nav === 'main') {
+                    showNav('main');
+                } else {
+                    showNav('main');
+                    showPage(nav);
+                }
+            });
+        });
+
+        // Project links
+        document.querySelectorAll('[data-project]').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                showPage(link.dataset.project);
+
+                // highlight active
+                document.querySelectorAll('[data-project]').forEach(l => l.classList.remove('active-link'));
+                link.classList.add('active-link');
+            });
+        });
+    </script>
 
 </body>
 </html>
