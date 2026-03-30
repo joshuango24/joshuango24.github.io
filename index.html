@@ -175,12 +175,35 @@
             link.addEventListener('click', e => {
                 e.preventDefault();
                 showPage(link.dataset.project);
+                observeGalleryImages();
 
                 // highlight active
                 document.querySelectorAll('[data-project]').forEach(l => l.classList.remove('active-link'));
                 link.classList.add('active-link');
             });
         });
+
+        // Scroll-reveal for gallery images
+        function observeGalleryImages() {
+            const imgs = document.querySelectorAll('.page.active .gallery img');
+            imgs.forEach(img => img.classList.remove('visible'));
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, i) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, i * 120);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            imgs.forEach(img => observer.observe(img));
+        }
+
+        // Also observe on initial load
+        observeGalleryImages();
     </script>
 
 </body>

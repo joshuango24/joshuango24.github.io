@@ -53,6 +53,11 @@ a {
     letter-spacing: 0.01em;
     margin-bottom: 2rem;
     display: block;
+    transition: color 0.3s;
+}
+
+.name:hover {
+    color: var(--text-light);
 }
 
 /* Nav levels */
@@ -60,7 +65,18 @@ a {
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
-    animation: fadeIn 0.25s ease;
+    animation: navSlideIn 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes navSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .nav-level.hidden {
@@ -71,7 +87,7 @@ a {
     font-size: 0.9rem;
     color: var(--text-light);
     padding: 0.15rem 0;
-    transition: color 0.2s;
+    transition: color 0.3s;
 }
 
 .nav-level a:hover {
@@ -98,11 +114,23 @@ a {
 /* Pages */
 .page {
     display: none;
+    opacity: 0;
 }
 
 .page.active {
     display: block;
-    animation: fadeIn 0.35s ease;
+    animation: pageIn 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes pageIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes fadeIn {
@@ -128,6 +156,26 @@ a {
 /* Information */
 .info-content {
     max-width: 480px;
+}
+
+.info-content p,
+.info-content .info-details,
+.info-content .contact-list {
+    opacity: 0;
+    transform: translateY(15px);
+    animation: staggerIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.info-content p:nth-child(1) { animation-delay: 0.1s; }
+.info-content p:nth-child(2) { animation-delay: 0.25s; }
+.info-content .info-details { animation-delay: 0.4s; }
+.info-content .contact-list { animation-delay: 0.2s; }
+
+@keyframes staggerIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .info-content p {
@@ -203,6 +251,15 @@ a {
     width: 100%;
     height: auto;
     display: block;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.gallery img.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Footer */
