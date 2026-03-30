@@ -27,7 +27,7 @@ html {
 }
 
 body {
-    font-family: Georgia, "Times New Roman", Times, serif;
+    font-family: 'Noto Sans Display', sans-serif;
     color: var(--black);
     background: var(--bg);
     font-size: clamp(1rem, 1.1vw, 1.25rem);
