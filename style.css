@@ -73,15 +73,16 @@ a:hover {
 
 /* Header */
 header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: var(--pad);
     background: transparent;
     z-index: 50;
-    transition: background 0.4s, box-shadow 0.4s;
 }
 
 header .logo {
@@ -367,12 +368,10 @@ main {
     height: auto;
     display: block;
     mix-blend-mode: multiply;
-    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    /* no hover transition */
 }
 
-.gallery-item:hover img {
-    transform: none;
-}
+/* no image hover effect */
 
 /* Work Table */
 .page-title-row {
