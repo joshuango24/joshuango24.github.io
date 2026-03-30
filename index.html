@@ -8,8 +8,13 @@
 </head>
 <body>
 
+    <!-- Hero Title -->
+    <div class="hero-title" id="heroTitle">
+        <a href="#" data-nav="home" class="hero-name">Joshua Ngo</a>
+    </div>
+
     <!-- Header -->
-    <header>
+    <header id="siteHeader">
         <a href="#" class="logo" data-nav="home">Joshua Ngo</a>
         <nav class="header-nav">
             <a href="#" data-nav="work" class="nav-link"><span class="nav-num">1</span><span class="nav-text" data-i18n="work">Work</span></a>
@@ -251,6 +256,18 @@
         const navLinks = document.querySelectorAll('[data-nav]');
         const menuBtn = document.getElementById('menuBtn');
         const mobileOverlay = document.getElementById('mobileOverlay');
+        const siteHeader = document.getElementById('siteHeader');
+        const heroTitle = document.getElementById('heroTitle');
+
+        // Scroll: shrink hero title → show sticky header
+        window.addEventListener('scroll', () => {
+            const threshold = heroTitle.offsetHeight;
+            if (window.scrollY > threshold) {
+                siteHeader.classList.add('scrolled');
+            } else {
+                siteHeader.classList.remove('scrolled');
+            }
+        });
 
         function showPage(id) {
             pages.forEach(p => p.classList.remove('active'));

@@ -8,7 +8,7 @@
 /* Base */
 :root {
     --black: #000;
-    --bg: #fcfbf6;
+    --bg: #F3F2EB;
     --text-muted: rgba(0, 0, 0, 0.5);
     --red: #e30613;
     --pad: clamp(1.25rem, 2.5vw, 1.7rem);
@@ -55,13 +55,62 @@ a:hover {
     opacity: 0.6;
 }
 
+/* Hero Title */
+.hero-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(3rem, 8vw, 6rem) var(--pad);
+}
+
+.hero-name {
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: #fff;
+}
+
 /* Header */
 header {
-    position: relative;
+    position: sticky;
+    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: var(--pad);
+    background: transparent;
+    z-index: 50;
+    transition: background 0.4s, box-shadow 0.4s;
+}
+
+header .logo {
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+header.scrolled {
+    background: var(--bg);
+    box-shadow: 0 1px 0 var(--black);
+}
+
+header.scrolled .logo {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+header .header-nav,
+header .header-right {
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+header.scrolled .header-nav,
+header.scrolled .header-right {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .logo {
@@ -529,12 +578,26 @@ footer {
 
 /* Mobile */
 @media (max-width: 768px) {
+    .hero-title {
+        padding: clamp(2rem, 6vw, 4rem) var(--pad);
+    }
+
+    .hero-name {
+        font-size: clamp(2.5rem, 10vw, 4rem);
+    }
+
     .header-nav {
         display: none;
     }
 
     .menu-btn {
         display: block;
+    }
+
+    /* On mobile, always show header-right (menu btn + toggles) when scrolled */
+    header .header-right {
+        opacity: 1;
+        pointer-events: auto;
     }
 
     .gallery-row-two {
