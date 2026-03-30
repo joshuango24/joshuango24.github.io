@@ -39,16 +39,19 @@ a {
     width: var(--sidebar-width);
     height: 100%;
     padding: 2.5rem 2rem;
+    padding-top: 25vh;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     z-index: 10;
 }
 
 .name {
-    font-size: 0.95rem;
-    font-weight: 500;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 1.3rem;
+    font-weight: 400;
     letter-spacing: 0.01em;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     display: block;
 }
 
@@ -200,6 +203,30 @@ a {
     width: 100%;
     height: auto;
     display: block;
+}
+
+/* Footer */
+.site-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.05rem;
+    font-size: 0.7rem;
+    color: var(--text-light);
+    letter-spacing: 0.03em;
+}
+
+.site-footer a {
+    color: var(--text-light);
+    transition: color 0.2s;
+}
+
+.site-footer a:hover {
+    color: var(--text);
 }
 
 /* Mobile */
