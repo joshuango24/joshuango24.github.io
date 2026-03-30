@@ -91,8 +91,7 @@ header .logo {
 }
 
 header.scrolled {
-    background: var(--bg);
-    box-shadow: 0 1px 0 var(--black);
+    background: transparent;
 }
 
 header.scrolled .logo {
@@ -372,7 +371,7 @@ main {
 }
 
 .gallery-item:hover img {
-    transform: scale(1.02);
+    transform: none;
 }
 
 /* Work Table */
