@@ -82,7 +82,7 @@ header {
     align-items: center;
     padding: var(--pad);
     background: transparent;
-    z-index: 50;
+    z-index: 200;
 }
 
 header .logo {
