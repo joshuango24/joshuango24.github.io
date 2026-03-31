@@ -93,7 +93,7 @@ header .logo {
 header .header-nav,
 header .header-right {
     opacity: 1;
-    pointer-events: none;
+    pointer-events: auto;
 }
 
 .logo {
