@@ -11,11 +11,6 @@
 </head>
 <body>
 
-    <!-- Hero Title -->
-    <div class="hero-title" id="heroTitle">
-        <a href="#" data-nav="home" class="hero-name">Joshua Ngo</a>
-    </div>
-
     <!-- Header -->
     <header id="siteHeader">
         <a href="#" class="logo" data-nav="home">Joshua Ngo</a>
@@ -41,9 +36,6 @@
         <a href="#" data-nav="philosophy" data-i18n="philosophy">Philosophy</a>
         <a href="#" data-nav="contact" data-i18n="contact">Contact</a>
     </div>
-
-    <!-- Divider -->
-    <div class="divider"></div>
 
     <!-- Main Content -->
     <main>
@@ -245,7 +237,6 @@
 
     <!-- Footer -->
     <footer>
-        <div class="divider"></div>
         <div class="footer-inner">
             <a href="https://instagram.com/joshuabngo" target="_blank">@joshuabngo</a>
             <span>&copy; 2026 Joshua Ngo</span>
@@ -258,17 +249,6 @@
         const menuBtn = document.getElementById('menuBtn');
         const mobileOverlay = document.getElementById('mobileOverlay');
         const siteHeader = document.getElementById('siteHeader');
-        const heroTitle = document.getElementById('heroTitle');
-
-        // Scroll: shrink hero title → show sticky header
-        window.addEventListener('scroll', () => {
-            const threshold = heroTitle.offsetHeight;
-            if (window.scrollY > threshold) {
-                siteHeader.classList.add('scrolled');
-            } else {
-                siteHeader.classList.remove('scrolled');
-            }
-        });
 
         function showPage(id) {
             pages.forEach(p => p.classList.remove('active'));
@@ -379,6 +359,25 @@
         }
 
         initReveals();
+
+        // Slideshow
+        (function() {
+            const slides = document.querySelectorAll('.home-gallery .gallery-item');
+            if (!slides.length) return;
+            let current = 0;
+
+            function showSlide(index) {
+                slides.forEach(s => s.classList.remove('slide-active'));
+                slides[index].classList.add('slide-active');
+            }
+
+            showSlide(0);
+
+            setInterval(() => {
+                current = (current + 1) % slides.length;
+                showSlide(current);
+            }, 4000);
+        })();
     </script>
 
 </body>
