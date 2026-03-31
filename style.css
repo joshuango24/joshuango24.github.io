@@ -107,7 +107,7 @@ header .header-right {
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: clamp(1.2rem, 3vw, 2.5rem);
+    gap: clamp(1.8rem, 4.5vw, 3.75rem);
     pointer-events: auto;
 }
 
