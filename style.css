@@ -108,6 +108,7 @@ header .header-right {
     transform: translateX(-50%);
     display: flex;
     gap: clamp(1.2rem, 3vw, 2.5rem);
+    pointer-events: auto;
 }
 
 .nav-link {
@@ -119,6 +120,8 @@ header .header-right {
     position: relative;
     min-width: 2rem;
     height: 2rem;
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 .nav-num {
