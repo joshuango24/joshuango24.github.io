@@ -412,9 +412,7 @@ main {
 
 /* About */
 .about-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    max-width: 720px;
     padding: 3rem 0 4rem;
 }
 
@@ -430,6 +428,41 @@ main {
     flex-direction: column;
     gap: 1.5rem;
     padding-top: 0.3rem;
+}
+
+.about-projects {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color, rgba(0, 0, 0, 0.1));
+}
+
+.projects-heading {
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    margin-bottom: 1.75rem;
+}
+
+.project-entry {
+    margin-bottom: 1.5rem;
+}
+
+.project-entry:last-child {
+    margin-bottom: 0;
+}
+
+.project-name {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.35rem;
+}
+
+.project-roles {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
 }
 
 .detail-block {
